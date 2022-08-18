@@ -1,0 +1,20 @@
+<form (ngSubmit)="submit()" [formGroup]="formSpecialties" #formDir="ngForm">
+  <div class="form-group">
+    <label for="name"></label>
+    <input
+      class="form-input"
+      type="text"
+      placeholder="Digite a especialidade"
+      formControlName="name"
+      required
+    />
+    <div
+      *ngIf="formSpecialties.get('name')?.errors?.['required'] &&
+      formSpecialties.get('name')?.touched"
+      class="validation"
+    >
+      <p>Especialidade obrigatória.</p>
+    </div>
+  </div>
+  <input type="submit" value="Cadastrar" />
+</form>

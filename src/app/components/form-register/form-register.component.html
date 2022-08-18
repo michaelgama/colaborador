@@ -1,0 +1,76 @@
+<form (ngSubmit)="submit()" [formGroup]="formRegister" #formDir="ngForm">
+  <div class="form-group">
+    <label for="name">Nome:</label>
+    <input
+      class="form-input"
+      type="text"
+      placeholder="Digite seu nome"
+      formControlName="name"
+      required
+    />
+    <div
+      *ngIf="formRegister.get('name')?.errors?.['required'] &&
+      formRegister.get('name')?.touched"
+      class="validation"
+    >
+      <p>Nome é obrigatório.</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input
+      class="form-input"
+      type="text"
+      placeholder="Digite seu email"
+      formControlName="email"
+      required
+    />
+    <div
+      *ngIf="formRegister.get('email')?.errors?.['required'] &&
+      formRegister.get('email')?.touched"
+      class="validation"
+    >
+      <p>E-mail é obrigatório.</p>
+    </div>
+
+    <div
+      *ngIf="formRegister.get('email')?.errors?.['email'] &&
+      formRegister.get('email')?.touched"
+      class="validation"
+    >
+      <p>E-mail no formato incorreto</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="cpf">CPF:</label>
+    <input
+      class="form-input"
+      type="text"
+      placeholder="000.000.000-00"
+      formControlName="cpf"
+      mask="000.000.000-00"
+      required
+    />
+    <div
+      *ngIf="formRegister.get('cpf')?.errors?.['required'] &&
+      formRegister.get('cpf')?.touched"
+      class="validation"
+    >
+      <p>CPF é obrigatório.</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Celular:</label>
+    <input
+      class="form-input"
+      type="text"
+      placeholder="(00) 0 0000-0000"
+      formControlName="phone"
+      mask="(00) 0 0000-0000"
+    />
+  </div>
+  <input type="submit" value="Cadastrar" />
+</form>

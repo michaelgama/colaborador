@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #193a3a;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  margin-right: 1rem;
+}
+
+li a,
+h2 {
+  color: #d4dada;
+}

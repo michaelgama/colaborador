@@ -1,0 +1,25 @@
+h2 {
+  color: #193a3a;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+table {
+  background-color: #ddd;
+  width: 50%;
+  border-spacing: 0 0.1rem;
+  margin: 0 auto;
+}
+
+td {
+  padding: 10px 0;
+  text-align: center;
+  color: #686666;
+}
+
+tr:nth-child(even) {
+  background: #ddd;
+}
+tr:nth-child(odd) {
+  background: #faf8f8;
+}
